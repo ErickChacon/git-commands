@@ -1,0 +1,66 @@
+# Set up user.name for all the repositories.
+git config --global user.name "Erick Chacon"
+
+# Set up user.mail for all the repositories.
+git config --global user.email "eral.th07@gmail.com"
+
+# Check current user.name and user.email at once.
+git config --list
+
+# Check existing SSH keys.
+ls -al ~/.ssh 
+# public and private key pair listed (e.g. id_rsa.pub and id_rsa)
+
+# Generate new SSH Key
+ssh-keygen -t rsa -b 4096 -C "eral.th07@gmail.com"
+
+# Adding SSH key to the ssh-agent.
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+# Adding the new SSH key to GitHub account.
+# sudo apt-get install xclip
+# xclip -sel clip < ~/.ssh/id_rsa.pub
+gedit ~/.ssh/id_rsa.pub # copy the content of the file
+# Set a new SHH key on your GitHub settings.
+
+# Clone a repository.
+git clone git@github.com:ErickChacon/test-2016.git
+
+# Add a file.
+git add test2
+
+# Add all the new and modified (untracked and tracked).
+git add --ignore-removal .
+
+# Update all modified and deleted files (tracked files).
+git add -u
+# Add all the new, modified and removed files (untracked and tracked).  #git add -A
+git add . 
+
+# Check status (added and removed files).
+git status
+
+# Remove file.
+git rm filename
+
+# Commit my changes.
+git commit -m "First commit"
+
+# Pushing changes to master branch.
+git push origin master
+
+# Create new repository and push to GitHub.
+echo "# First-Steps-With-Julia" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:SpeckyPeruvianStats/First-Steps-With-Julia.git
+git push -u origin master
+
+# Add .gitignore file
+touch .gitignore 
+
+
+# Already undesired tracked file
+git rm --cached filename
