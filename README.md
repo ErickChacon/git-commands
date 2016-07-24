@@ -21,6 +21,22 @@ which git
 
 Download the Git for Windows [installer package](https://git-scm.com/download/win).
 Run the installer
+Use Git from Bash only
+Checkout Windows-style, commit Unix-style line ending
+Use MinTTY
+Enable
+
+If java is not recognized:
+```
+java
+javac
+```
+Copy addres of where binaries of java and javac are found with semicolom
+Program Files >> Java >> jdk >> bin 
+
+on
+windows >> control panel >> System and Security >> System >> 
+Advanced System Settings >> Advanced >> Environment Variables >> Sytem variables >> Path
 Next and Finish prompts to complete the installation.
 Open Git Bash.vbs from the Git folder of the Programs directory to open a command window
 
@@ -82,6 +98,10 @@ gedit ~/.ssh/id_rsa.pub # copy the content of the file
 ### Windows
 
 ```
+ssh-keygen -t dsa
+cd ~/.ssh
+ls -la
+cat id_dsa.pub
 git config --global user.name "Emma Paris"
 git config --global user.email "eparis@atlassian.com"
 ```
