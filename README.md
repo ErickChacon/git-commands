@@ -4,18 +4,25 @@
 
 ## Installation of git
 
-For updated intructions check the [Atlassian Documentation](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
-
-[git --fast-version-control](https://git-scm.com/downloads)
+Downloads for Mac OS X, Windows, Linux and Solaris can be found on the official web of [git - downloads](https://git-scm.com/downloads). Instructions to install Git for Linux, Mac and Windows, using these downloads, are described on the [Atlassian Documentation - Set up Git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
 
 ### Linux
 
-[Download for Linux and Unix](https://git-scm.com/download/linux)
-
+For Debian/Ubunto distribution, use the next command to install Git:
 ```
 sudo apt-get install git
-which git
 ```
+
+If your linux distributions is other, find distribution-specific instructions on [Download for Linux and Unix](https://git-scm.com/download/linux).
+
+Finally, you can check if Git has been installed with:
+```
+which git
+# /usr/bin/git
+```
+
+
+
 
 ### Windows
 
