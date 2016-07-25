@@ -6,7 +6,7 @@
 
 Downloads for Mac OS X, Windows, Linux and Solaris can be found on the official web of [git - downloads](https://git-scm.com/downloads). Instructions to install Git for Linux, Mac and Windows, using these downloads, are described on the [Atlassian Documentation - Set up Git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
 
-### Linux
+#### Linux
 
 For Debian/Ubunto distribution, use the next command to install Git:
 ```
@@ -21,33 +21,25 @@ which git
 # /usr/bin/git
 ```
 
+#### Windows
 
+1. Download the Git for Windows [installer package](https://git-scm.com/download/win).
+2. Run the installer.
+3. Select the location of the installation and proceed.
+4. Select **Use Git from Bash only**.
+5. Select **Checkout Windows-style, commit Unix-style line ending**.
+6. Select **Use MinTTY**
+7. Select **Enable ... **
 
+Open **Git bash** on Programs directory to open a command window, if *java* is not recognized when typing `java` or `javac`:
 
-### Windows
+Copy address of where binaries of java and javac are found (Program Files >> Java >> jdk >> bin) with semicolom on:
 
-Download the Git for Windows [installer package](https://git-scm.com/download/win).
-Run the installer
-Use Git from Bash only
-Checkout Windows-style, commit Unix-style line ending
-Use MinTTY
-Enable
+> windows >> control panel >> System and Security >> System >> Advanced System Settings >> Advanced >> Environment Variables >> Sytem variables >> Path
 
-If java is not recognized:
-```
-java
-javac
-```
-Copy addres of where binaries of java and javac are found with semicolom
-Program Files >> Java >> jdk >> bin 
+Open **Git bash** again and type `java`. It should be recognized now.
 
-on
-windows >> control panel >> System and Security >> System >> 
-Advanced System Settings >> Advanced >> Environment Variables >> Sytem variables >> Path
-Next and Finish prompts to complete the installation.
-Open Git Bash.vbs from the Git folder of the Programs directory to open a command window
-
-### Mac
+#### Mac
 
 ```
 git --version
