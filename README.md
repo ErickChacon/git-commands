@@ -2,11 +2,11 @@
 
 >  Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. [Git web](https://git-scm.com/)
 
-## [Installation of Git](https://github.com/ErickChacon/git-commands/blob/master/install)
+## [Installation of Git](https://github.com/ErickChacon/git-commands/blob/master/install.md)
 
 Downloads for Mac OS X, Windows, Linux and Solaris can be found on the official web of [git - downloads](https://git-scm.com/downloads). Instructions to install Git for Linux, Mac and Windows, using these downloads, are described on the [Atlassian Documentation - Set up Git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
 
-## [Setting up Git](https://github.com/ErickChacon/git-commands/blob/master/set-up)
+## [Setting up Git](https://github.com/ErickChacon/git-commands/blob/master/set-up.md)
 
 To start using Git, it is required to create a user and a ssh-key for
 authentication with the remote repository.
