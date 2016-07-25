@@ -102,5 +102,7 @@ git log
 ## Git Cheet Sheets
 
 [Basic Cheet Sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+
 [Commands Sequence](http://www.cheat-sheets.org/saved-copy/git-cheat-sheet.pdf)
+
 [Github](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf)
