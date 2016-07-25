@@ -23,87 +23,86 @@ which git
 
 #### Windows
 
-1. Download the Git for Windows [installer package](https://git-scm.com/download/win).
+1. Download Git installer for Windows [installer package](https://git-scm.com/download/win).
 2. Run the installer.
 3. Select the location of the installation and proceed.
-4. Select **Use Git from Bash only**.
-5. Select **Checkout Windows-style, commit Unix-style line ending**.
-6. Select **Use MinTTY**
-7. Select **Enable ... **
+4. Select *Use Git from Bash only*.
+5. Select *Checkout Windows-style, commit Unix-style line ending*.
+6. Select *Use MinTTY*
+7. Select *Enable ...*
+8. Open **Git bash** on Programs directory to open a command window.
 
-Open **Git bash** on Programs directory to open a command window, if *java* is not recognized when typing `java` or `javac`:
-
-Copy address of where binaries of java and javac are found (Program Files >> Java >> jdk >> bin) with semicolom on:
+Note: If *java* is not recognized when typing `java` or `javac`, copy the address where binaries of java and javac are found (Program Files >> Java >> jdk >> bin) on:
 
 > windows >> control panel >> System and Security >> System >> Advanced System Settings >> Advanced >> Environment Variables >> Sytem variables >> Path
+
+*Do not forget to use semicolom to add the path.*
 
 Open **Git bash** again and type `java`. It should be recognized now.
 
 #### Mac
 
+Check if Git is installed on your system.
 ```
 git --version
+# git version 2.1.4
 ```
-Download the Git installer from its official website.  
-The installer is a DMG file. 
-Double-click the DMG to expand it.
-Double-click the PKG file to install it.
-The Git installer launches.
-Follow the prompts to install Git.
-Open a terminal on your system.
-Verify the installation was successful by typing which git --version at the command line.
-
-
+###### Easiest installation of Git:
 
 > The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) or above you can do this simply by trying to run git from the Terminal the very first time. If you don’t have it installed already, it will prompt you to install it. [Install git on mac](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-```
-Launch the App Store then download "Xcode".
-Install Xcode, run it and go to Xcode’s preference via shortcut key `command` + `,`
-Go to the Downloads tab, look for "Command Line Tools", and click Install.
-quit and re-open Terminal, hit the git command and see if it has been successfully reinstated.
-```
+###### Installing Git through Xcode: [Install Xcode](http://www.hongkiat.com/blog/mountain-lion-git-fix/)
 
-## Setting git and a web repository
+1. Launch the App Store, then download "Xcode".
+2. Install Xcode, run it and go to Xcode’s preference via shortcut key `command` + `,`.
+3. Go to the Downloads tab, look for "Command Line Tools", and click Install.
+4. Quit and re-open Terminal, hit the git command and see if it has been successfully reinstated.
 
-### Linux
+###### Manual installation of Git: [set-up-git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
 
+2. Download the Git installer from [git - download - mac](https://git-scm.com/download/mac). The installer is a DMG file. 
+3. Double-click the DMG to expand it.
+4. Double-click the PKG file to install it.
+5. The Git installer launches.
+6. Follow the prompts to install Git.
+7. Open a terminal on your system.
+8. Verify the installation was successful by typing which `git --version` at the command line.
+
+## Setting up git
+
+Set up user.name for all the repositories.
 ```
-# Set up user.name for all the repositories.
 git config --global user.name "Erick Chacon"
-
-# Set up user.mail for all the repositories.
+```
+Set up user.mail for all the repositories.
+```
 git config --global user.email "eral.th07@gmail.com"
-
-# Check current user.name and user.email at once.
+```
+Check current user.name and user.email at once.
+```
 git config --list
+```
+Check existing SSH keys.
+```
+ls -al ~/.ssh
+```
+*Public and private key pair listed (e.g. id_rsa.pub and id_rsa)*
 
-# Check existing SSH keys.
-ls -al ~/.ssh 
-# public and private key pair listed (e.g. id_rsa.pub and id_rsa)
-
-# Generate new SSH Key
+Generate new SSH Key.
+```
 ssh-keygen -t rsa -b 4096 -C "eral.th07@gmail.com"
-
-# Adding SSH key to the ssh-agent.
+```
+Adding SSH key to the ssh-agent.
+```
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-
-# Adding the new SSH key to GitHub account.
-gedit ~/.ssh/id_rsa.pub # copy the content of the file
-# Set a new SHH key on your GitHub settings.
 ```
 
-### Windows
-
+Adding the new SSH key to GitHub account.
 ```
-ssh-keygen -t dsa
-cd ~/.ssh
-ls -la
-cat id_dsa.pub
-git config --global user.name "Emma Paris"
-git config --global user.email "eparis@atlassian.com"
+cat ~/.ssh/id_rsa.pub # copy the content of the file
 ```
+Set a new SHH key on your GitHub settings.
 
 ## Git commands
 
