@@ -2,115 +2,101 @@
 
 >  Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. [Git web](https://git-scm.com/)
 
-## Installation of git
+## [Installation of Git](https://github.com/ErickChacon/git-commands/blob/master/install)
 
 Downloads for Mac OS X, Windows, Linux and Solaris can be found on the official web of [git - downloads](https://git-scm.com/downloads). Instructions to install Git for Linux, Mac and Windows, using these downloads, are described on the [Atlassian Documentation - Set up Git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
 
-#### Linux
+## [Setting up Git](https://github.com/ErickChacon/git-commands/blob/master/set-up)
 
-For Debian/Ubunto distribution, use the next command to install Git:
-```
-sudo apt-get install git
-```
-
-If your linux distributions is other, find distribution-specific instructions on [Download for Linux and Unix](https://git-scm.com/download/linux).
-
-Finally, you can check if Git has been installed with:
-```
-which git
-# /usr/bin/git
-```
-
-#### Windows
-
-1. Download Git installer for Windows [installer package](https://git-scm.com/download/win).
-2. Run the installer.
-3. Select the location of the installation and proceed.
-4. Select *Use Git from Bash only*.
-5. Select *Checkout Windows-style, commit Unix-style line ending*.
-6. Select *Use MinTTY*
-7. Select *Enable ...*
-8. Open **Git bash** on Programs directory to open a command window.
-
-Note: If *java* is not recognized when typing `java` or `javac`, copy the address where binaries of java and javac are found (Program Files >> Java >> jdk >> bin) on:
-
-> windows >> control panel >> System and Security >> System >> Advanced System Settings >> Advanced >> Environment Variables >> Sytem variables >> Path
-
-*Do not forget to use semicolom to add the path.*
-
-Open **Git bash** again and type `java`. It should be recognized now.
-
-#### Mac
-
-Check if Git is installed on your system.
-```
-git --version
-# git version 2.1.4
-```
-###### Easiest installation of Git:
-
-> The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) or above you can do this simply by trying to run git from the Terminal the very first time. If you don’t have it installed already, it will prompt you to install it. [Install git on mac](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
-###### Installing Git through Xcode: [Install Xcode](http://www.hongkiat.com/blog/mountain-lion-git-fix/)
-
-1. Launch the App Store, then download "Xcode".
-2. Install Xcode, run it and go to Xcode’s preference via shortcut key `command` + `,`.
-3. Go to the Downloads tab, look for "Command Line Tools", and click Install.
-4. Quit and re-open Terminal, hit the git command and see if it has been successfully reinstated.
-
-###### Manual installation of Git: [set-up-git](https://confluence.atlassian.com/bitbucket/set-up-git-744723531.html).
-
-2. Download the Git installer from [git - download - mac](https://git-scm.com/download/mac). The installer is a DMG file. 
-3. Double-click the DMG to expand it.
-4. Double-click the PKG file to install it.
-5. The Git installer launches.
-6. Follow the prompts to install Git.
-7. Open a terminal on your system.
-8. Verify the installation was successful by typing which `git --version` at the command line.
-
-## Setting up git
-
-Set up user.name for all the repositories.
-```
-git config --global user.name "Erick Chacon"
-```
-Set up user.mail for all the repositories.
-```
-git config --global user.email "eral.th07@gmail.com"
-```
-Check current user.name and user.email at once.
-```
-git config --list
-```
-Check existing SSH keys.
-```
-ls -al ~/.ssh
-```
-*Public and private key pair listed (e.g. id_rsa.pub and id_rsa)*
-
-Generate new SSH Key.
-```
-ssh-keygen -t rsa -b 4096 -C "eral.th07@gmail.com"
-```
-Adding SSH key to the ssh-agent.
-```
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-```
-
-Adding the new SSH key to GitHub account.
-```
-cat ~/.ssh/id_rsa.pub # copy the content of the file
-```
-Set a new SHH key on your GitHub settings.
+To start using Git, it is required to create a user and a ssh-key for
+authentication with the remote repository.
 
 ## Git commands
 
 ### Clone a repository
+Clone command
+```
+git clone git@github.com:ErickChacon/git-commands.git
+```
+Check git-commands folder to see all the files included in the repository.
 
-### Create a branch
+### Work in branches
+
+See what branch you are on:
+```
+git branch
+```
+
+Create a new branch:
+```
+git checkout -b branchname
+```
+
+Switch between branches:
+```
+git checkout branchname
+```
+
+Delete branch:
+```
+git branch -D branchname
+```
+### Add, modify or remove files
+
+You can create, delete and modified files on the current folder of the
+repository.
+Track these files:
+```
+git status
+```
+
+Add and rm files to the index:
+```
+git add filename
+git rm filename
+```
+
+Update new, removed and modified files with any of these commands:
+```
+git add -A
+git add -all
+git add -no-ignore-removal
+```
+
+Make a commit to record changes of the repository:
+```
+git commit -m "useful message"
+```
 
 ### Pull and push
 
+To send recorded changes to the remote repository:
+```
+git push origin branchname
+```
+
+To receive recorder changes from the remote repository:
+```
+git pull origin branchname
+```
+
 ### Merge branch with master repository
+
+Update my branch according to the master:
+```
+git checkout branchname
+git pull origin master
+```
+
+Merge my brach into master:
+```
+git checkout master
+git merge brachname
+```
+ 
+To see how it was merged:
+```
+git log
+```
+
 
