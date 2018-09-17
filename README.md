@@ -37,10 +37,15 @@ Switch between branches:
 git checkout branchname
 ```
 
-Delete branch:
+Delete branch locally:
 ```
 git branch -D branchname
 ```
+Delete branch globally:
+```
+git push origin --delete branchname
+```
+
 ### Add, modify or remove files
 
 You can create, delete and modified files on the current folder of the
