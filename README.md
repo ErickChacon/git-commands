@@ -104,6 +104,12 @@ To see how it was merged:
 git log
 ```
 
+## Change url when repository has change name
+
+```bash
+git remote set-url origin [updated link]
+```
+
 ## Git Cheet Sheets
 
 [Basic Cheet Sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
